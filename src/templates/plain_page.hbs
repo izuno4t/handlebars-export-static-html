@@ -1,0 +1,25 @@
+<html>
+<head>
+<script type="text/javascript" src="../vendors/jquery/dist/jquery.min.js"></script>
+<script type="text/javascript" src="./vendors/handlebars/handlebars.min.js"></script>
+  <script type="text/x-handlebars-template" id="template">
+    <h1>{{name}}</h1>
+    <div>{{age}}</div>
+  </script>
+  <script>
+    window.onload = function() {
+        var source = $("#template").html();
+        var template = Handlebars.compile(source);
+        var values = {
+            name : "Satoshi Watanabe",
+            age : 33
+        };
+        var html = template(values);
+        console.log(html);
+        $("#contents").html(html);
+    }
+  </script>
+</head>
+<body id="contents">
+</body>
+</html>
